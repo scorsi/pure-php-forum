@@ -6,10 +6,19 @@
  * Time: 15:34
  */
 
+session_start();
 define('VALID_REQUIRE', true);
 
 require_once 'db.php';
 require_once 'connected.php';
+
+if ($connected === false)
+{
+    header('Location: login.php');
+    exit();
+}
+
+
 
 if (!isset($_GET['id']) && is_numeric($_GET['id']))
     die('Invalid id');

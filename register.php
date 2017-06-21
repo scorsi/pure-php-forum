@@ -6,9 +6,19 @@
  * Time: 15:33
  */
 
+session_start();
 define('VALID_REQUIRE', true);
 
 require_once 'db.php';
+require_once 'connected.php';
+
+if ($connected === true)
+{
+    header('Location: index.php');
+    exit();
+}
+
+
 
 if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']))
 {
