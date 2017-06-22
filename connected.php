@@ -38,11 +38,15 @@ if ($connected === true)
     }
 
     $connected = false;
+    $connectedId = 0;
 
     while ($data = $req->fetch())
     {
         if ($password == $data['password'])
+        {
             $connected = true;
+            $connectedId = $data['id'];
+        }
     }
     $req->closeCursor();
 }
