@@ -83,7 +83,7 @@ $req->execute(array($topic['id']));
                             <div class="col s4"><?= $creatorUsername ?></div>
                             <div class="col s8">
                                 <div class="row">
-                                    <div class="col s12">Date</div>
+                                    <div class="col s12"><?= $data['date'] ?></div>
                                     <div class="col s12"><?= $data['message'] ?></div>
                                 </div>
                             </div>
